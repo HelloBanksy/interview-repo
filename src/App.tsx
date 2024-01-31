@@ -1,5 +1,3 @@
-import { useState } from "react";
-import styled from "styled-components";
 import "./App.css";
 
 const movies = [
@@ -24,53 +22,7 @@ const movies = [
 ];
 
 function App() {
-  const [activeItem, setActiveItem] = useState<undefined | string>();
-
-  return (
-    <Wrap>
-      {movies.map((movie) => {
-        return (
-          <ItemWrap key={movie.id}>
-            <ItemTitle
-              onClick={() =>
-                setActiveItem(activeItem === movie.id ? undefined : movie.id)
-              }
-            >
-              {movie.title}
-            </ItemTitle>
-            {activeItem === movie.id && (
-              <ItemContent>{movie.content}</ItemContent>
-            )}
-          </ItemWrap>
-        );
-      })}
-    </Wrap>
-  );
+  return <></>;
 }
 
 export default App;
-
-const Wrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-`;
-
-const ItemWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: red;
-  width: 400px;
-`;
-
-const ItemTitle = styled.div`
-  display: flex;
-  background: gray;
-  cursor: pointer;
-`;
-
-const ItemContent = styled.div`
-  display: flex;
-  width: 100%;
-  height: fit-content;
-`;
